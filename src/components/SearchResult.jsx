@@ -41,7 +41,7 @@ const SearchResult = () => {
                 {!imageSearch ? (
                 <>
                     {items.map((item, index) => (
-                        <SearchedItemTemplate key={index} data={item}/>
+                        <SearchedItemTemplate key={index} data={item} />
                     ))}
                 </>
                 ) : (
@@ -52,11 +52,11 @@ const SearchResult = () => {
                     ))} 
                     </div>
                 )}
-                <Pagination queries={queries}/>
+                <Pagination queries={queries} />
             </main>
-            <Footer/> 
+            <Footer /> 
          </div>
-    )
+    );      
 };
 
 export default SearchResult;

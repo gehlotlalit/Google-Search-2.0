@@ -9,7 +9,8 @@ import { menu } from "../utils/Constants";
 
 const SearchResultHeader = () => {
   const [selectedMenu, setSelectedMenu] = useState("All");
-  const { setImageSearch } = useContext(Context)
+  const { setImageSearch } = useContext(Context);
+
   useEffect(() => {
     return () => setImageSearch(false);
   }, []);
@@ -19,6 +20,7 @@ const SearchResultHeader = () => {
     setSelectedMenu(menuItem.name);
     setImageSearch(isTypeImage ? true : false);
   };
+
   return <>
     <div className="p-[15px] pb-0 md:pr-5 md:pl-20 md:pt-7 border-b border-[#ebebeb] flex md:block flex-col items-center
    sticky top-0 bg-white">
@@ -28,6 +30,7 @@ const SearchResultHeader = () => {
          <img
             className="hidden md:block w-[92px] mr-10"
             src={Logo}
+            alt="Logo"
           />
          </Link>
           <SearchInput from="searchRsult" />
@@ -42,7 +45,8 @@ const SearchResultHeader = () => {
           <span
             key={index} 
             className={`flex items-center p-3 text-[#5f6368] cursor-pointer relative ${
-              selectedMenu === menu.name ? "text-[#1a73e8]" : ""}`}
+              selectedMenu === menu.name ? "text-[#1a73e8]" : ""
+            }`}
             onClick={() => clickHandler(menu)}
           > 
             <span className="hidden md:block mr-2">
